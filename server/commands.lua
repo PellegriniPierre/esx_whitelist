@@ -1,10 +1,10 @@
-ESX.RegisterCommand('wlrefresh', 'admin', function(xPlayer, args, showError)
+RegisterCommand('wlrefresh', function(xPlayer, args, showError)
 	loadWhiteList(function()
 		showError('Whitelist reloaded')
 	end)
 end, true, {help = _U('help_whitelist_load')})
 
-ESX.RegisterCommand('wladd', 'admin', function(xPlayer, args, showError)
+RegisterCommand('wladd', function(xPlayer, args, showError)
 	args.license = args.license:lower()
 
 	if string.len(args.license) == 40 then
